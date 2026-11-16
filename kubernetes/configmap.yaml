@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: assistant-config
+  namespace: knowledge-assistant
+data:
+  CHROMA_PATH: /data/chroma
+  HF_HOME: /models/huggingface
+  EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+  OLLAMA_URL: http://ollama:11434
+  OLLAMA_MODEL: qwen2.5:1.5b
+  RELEVANCE_DISTANCE_THRESHOLD: "1.15"
+  LOG_LEVEL: INFO

@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - kubernetes/namespace.yaml
+  - kubernetes/configmap.yaml
+  - kubernetes/persistent-volume.yaml
+  - kubernetes/deployment.yaml
+  - kubernetes/service.yaml
+  - kubernetes/ollama.yaml
+  - kubernetes/observability.yaml
+configMapGenerator:
+  - name: grafana-dashboard
+    namespace: knowledge-assistant
+    files:
+      - knowledge-assistant.json=monitoring/grafana/dashboards/knowledge-assistant.json
+generatorOptions:
+  disableNameSuffixHash: true
