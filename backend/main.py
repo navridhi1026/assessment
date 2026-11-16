@@ -188,7 +188,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             "document_indexed",
             extra={
                 "document_id": document["id"],
-                "filename": filename,
+                "document_filename": filename,
                 "page_count": document["page_count"],
                 "chunk_count": document["chunk_count"],
             },
